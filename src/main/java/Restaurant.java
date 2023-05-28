@@ -65,7 +65,13 @@ public class Restaurant {
     }
 
     public int calculateTotalCost(List<String> items) throws itemNotFoundException{
-        return 0;
+        /*
+         * Using java 8 features --> streams
+         * Iterating the menu list and then filtering out all the instances that match the item received in the
+         * list of string, and then adding it all up and returning the sum
+         * */
+        return menu.stream().filter(item -> items.stream().anyMatch(selectedItem -> selectedItem.equals(item.getName()))).
+                mapToInt(Item::getPrice).sum();
     }
 
 }

@@ -76,6 +76,7 @@ class RestaurantTest {
         items.add("Sweet corn soup");
         items.add("Vegetable lasagne");;
         items.add("Veg Fried Rice");
+        //expected value for assertion is set as a sum of all the item values set before each test case
         assertEquals(787, restaurant.calculateTotalCost(items));
     }
 
