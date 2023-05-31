@@ -14,8 +14,6 @@ import static org.mockito.Mockito.when;
 
 class RestaurantTest {
     @Mock
-    RestaurantService restaurantService;
-    @Mock
     Restaurant restaurant;
 
     @BeforeEach

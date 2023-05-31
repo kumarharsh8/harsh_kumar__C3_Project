@@ -14,6 +14,7 @@ public class RestaurantService {
          * While returning we check if the restaurant object exists, we are returning that value or else we are throwing restaurantNotFoundException
          * */
         Optional<Restaurant> restaurantOptional = getRestaurants().stream().filter(restaurant -> restaurant.getName().equals(restaurantName)).findFirst();
+        restaurantOptional.ifPresent(restaurant -> restaurant.displayDetails());
         return restaurantOptional.orElseThrow(() -> new restaurantNotFoundException("Restaurant Not Found"));
     }
 
